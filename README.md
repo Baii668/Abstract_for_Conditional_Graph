@@ -1,11 +1,2 @@
-在retrieve.py中，先设置folder_path为待检索的事件库
-然后设置local_summary为实际数据中event_tag
-event_type为实际数据中label_org、label_type、label_actor任选item的拼接
-local_outcome为实际数据中的outcome_tag
-outcome_type为outcome_new的summary
-运行时，会检索三轮，最后写入“similar_event_strategy.json”中
-在abstract.py中，先设置32行打开上面的json文件
-similar_event_type是事件类别，人为起一个名字
-similar_strategy是决策类别，人为起一个名字，或者用outcome_tag也行
-运行后，会生成一个similar_event_type + "-" + similar_strategy + ".json"的文件，common_basis和seldom_basis可以认为没有区别
-需要人为干预一下对应key的value，或者问一下LLM再check一下
+先运行retireve.py，找到做出同类决策的同类事件
+再运行abstract.py，归类通用的条件
